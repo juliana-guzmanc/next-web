@@ -296,6 +296,16 @@
   .nx .faq details p{ padding:0 0 14px; color:var(--tinta-2); font-size:.93rem; }
   .nx .redes{ display:grid; gap:12px; justify-items:start; }
   .nx .redes .ig{ padding:12px 20px; font-size:.95rem; }
+  .nx .priv-btn{ display:inline-flex; align-items:center; gap:8px; border:1.5px solid var(--borde); background:#fff; color:var(--magenta); border-radius:999px; padding:10px 16px; font:inherit; font-weight:700; font-size:.9rem; cursor:pointer; }
+  .nx .priv-btn:hover{ border-color:var(--rosa); background:var(--rosa-suave); }
+  .nx .priv-btn svg{ width:18px; height:18px; }
+  .nx .enlace-priv{ border:0; background:none; padding:0; font:inherit; color:var(--magenta); font-weight:700; text-decoration:underline; cursor:pointer; }
+  .nx dialog.privacidad{ max-width:min(560px,calc(100vw - 32px)); border:0; border-radius:24px; padding:28px; box-shadow:0 30px 70px rgba(43,23,48,.35); color:var(--tinta); font-family:var(--f); }
+  .nx dialog.privacidad::backdrop{ background:rgba(43,23,48,.55); }
+  .nx dialog.privacidad h2{ font-size:1.4rem; color:var(--ciruela); margin-bottom:14px; }
+  .nx dialog.privacidad ul{ padding-left:20px; display:grid; gap:8px; color:var(--tinta-2); margin-bottom:14px; }
+  .nx dialog.privacidad .priv-contacto{ font-size:.9rem; color:var(--tinta-2); margin-bottom:16px; }
+  .nx dialog.privacidad .priv-contacto b{ color:var(--magenta); }
   .nx .cierre{ font-family:var(--mano); font-size:clamp(1.7rem,3vw,2.4rem); color:var(--magenta); line-height:1.15; }
   @media (max-width:980px){ .nx .accesos,.nx .abajo{ grid-template-columns:1fr; } }
 
@@ -538,31 +548,47 @@
           </article>
           <article class="acceso u">
             <span class="quien">Candidatas</span>
-            <h3>Prueba la app</h3>
-            <p>Entra con la demostración de Camila.</p>
+            <h3>Crea tu cuenta gratis</h3>
+            <p>Regístrate en minutos y descubre las ofertas que encajan contigo.</p>
             <ul>
               <li><svg class="ic" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>% de compatibilidad</li>
               <li><svg class="ic" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>Minutos en transporte</li>
               <li><svg class="ic" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>Ofertas flexibles de la BNE</li>
             </ul>
-            <div class="botones"><a class="btn b-mag js-enlace" data-enlace="app" href="#" target="_blank" rel="noopener">Probar la app <span class="fl">→</span></a></div>
+            <div class="botones"><a class="btn b-mag js-enlace" data-enlace="app" href="#" target="_blank" rel="noopener">Crear mi cuenta <span class="fl">→</span></a></div>
           </article>
         </div>
         <div class="abajo">
           <div class="faq">
             <details><summary>¿Qué tipo de ofertas encuentro?</summary><p>Part-time, por turnos, híbridas o remotas, de empresas verificadas y de la Bolsa Nacional de Empleo.</p></details>
             <details><summary>¿Cómo se calcula la compatibilidad?</summary><p>Habilidades 40%, experiencia 25%, tiempo de traslado 20% y disponibilidad 15%.</p></details>
-            <details><summary>¿Cómo protegen mis datos?</summary><p>La empresa ve tu nombre y contacto solo si te preselecciona. La IA nunca recibe tu nombre, RUT ni CV.</p></details>
+            <details><summary>¿Cómo protegen mis datos?</summary><p>La empresa ve tu nombre y contacto solo si te preselecciona. La IA nunca recibe tu nombre, RUT ni CV. <button type="button" class="enlace-priv" data-privacidad>Lee nuestra política de privacidad</button></p></details>
             <details><summary>¿Cómo publica una empresa?</summary><p>Completa el formulario "Publica tu oferta". El equipo NEXT verifica la empresa antes de publicar.</p></details>
           </div>
           <div class="redes">
             <a class="ig js-enlace" data-enlace="instagram" href="https://www.instagram.com/next_tu_proximo_paso/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".8" fill="currentColor"/></svg><span>Síguenos · @next_tu_proximo_paso</span></a>
+            <button type="button" class="priv-btn" data-privacidad><svg class="ic" viewBox="0 0 24 24"><path d="M12 3 4 7v5c0 4.5 3.4 8.3 8 9 4.6-.7 8-4.5 8-9V7z"/></svg>Política de privacidad</button>
             <p class="cierre">Buscamos el trabajo que se adapta a ti.</p>
           </div>
         </div>
       </div>
     </section>
   </main>
+
+  <dialog class="privacidad" id="nx-privacidad" aria-labelledby="nx-priv-tit">
+    <h2 id="nx-priv-tit">Privacidad y uso de tus datos</h2>
+    <ul>
+      <li>Usamos tus datos solo para conectarte con ofertas de empleo y cursos.</li>
+      <li>Las empresas ven tus habilidades y tu compatibilidad, pero no tu nombre, contacto ni CV hasta que te preseleccionan.</li>
+      <li>Tu CV se guarda en un espacio privado y solo sale a través de NEXT.</li>
+      <li>La compatibilidad nunca considera tu género, edad, estado civil ni nacionalidad.</li>
+      <li>La inteligencia artificial nunca recibe tu nombre, RUT ni CV.</li>
+      <li>Puedes descargar todos tus datos o eliminar tu cuenta cuando quieras, desde Mi cuenta.</li>
+      <li>Nunca te pediremos dinero, ni tu clave por correo o WhatsApp.</li>
+    </ul>
+    <p class="priv-contacto">Dudas sobre tus datos: <b class="js-correo-txt"></b></p>
+    <button type="button" class="btn b-mag" data-cerrar-priv>Entendido</button>
+  </dialog>
 
   <footer class="pie">
     <div class="ancho">
@@ -712,6 +738,14 @@
       raiz.querySelectorAll('.js-correo').forEach(function (p) { p.hidden = false; });
       raiz.querySelectorAll('.js-correo-txt').forEach(function (b) { b.textContent = correo; });
     }
+
+    // Política de privacidad (ventana)
+    var priv = document.getElementById('nx-privacidad');
+    raiz.addEventListener('click', function (ev) {
+      if (ev.target.closest('[data-privacidad]') && priv) { if (priv.showModal) priv.showModal(); else priv.setAttribute('open', ''); }
+      if (ev.target.closest('[data-cerrar-priv]') && priv) { if (priv.close) priv.close(); else priv.removeAttribute('open'); }
+    });
+    if (priv) priv.addEventListener('click', function (ev) { if (ev.target === priv && priv.close) priv.close(); });
 
     // Permite abrir una sección directo con #empresas, #impacto, etc.
     var mapa = { inicio: 0, problema: 1, solucion: 2, empresas: 3, historia: 4, impacto: 5, accesos: 6 };
